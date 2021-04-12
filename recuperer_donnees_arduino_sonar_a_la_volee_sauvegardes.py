@@ -6,12 +6,13 @@ import serial
 # Caractéristiques de l'acquisition
 duree=10000 # (en ms)
 dmax=210 # Distance maximale à afficher (cm)
+nomfichier='recuperer_donnees_arduino_sonar_a_la_volee_sauvegardes'
 
 # Représentation graphique
 fig=plt.figure(1)
 plt.xlabel('t (ms)')
 plt.ylabel('d (cm)')
-plt.xlim(0,duree)
+plt.xlim(0,duree+1000)
 plt.ylim(0,dmax)
 
 line,=plt.plot([],[],'r-')
@@ -46,10 +47,18 @@ def mesure():
         liste_d.append(d)
         liste_t.append(t-t0)
         
-        if t-t0>duree: # Réinitialisation de l'affichage en bout de graphe
-            t0=t
-            liste_d=[d]
-            liste_t=[0]
+        if t-t0>duree: # Fin du processus
+            # Sauvegarde des données au préalable
+            fichier=open(nomfichier+'.csv','w')
+            
+            fichier.write('t(s)'+';'+'d (m)'+'\n') # Ecriture de la première ligne
+            for i in range(len(liste_d)):
+                fichier.write(str(liste_t[i]).replace('.',',')+';'+str(liste_d[i]).replace('.',',')+'\n')
+            
+            fichier.close() # Fermeture du fichier de sauvegarde des données
+            
+            # Fin du processus
+            anim.event_source.stop()
     except:
         pass
     
