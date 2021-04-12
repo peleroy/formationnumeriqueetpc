@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cb:CODEBLOCKS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://education.mit.edu/openblocks/ns http://education.mit.edu/openblocks/codeblocks.xsd" xmlns:cb="http://education.mit.edu/openblocks/ns">
+    <Pages collapsible-pages="yes" drawer-with-page="yes">
+        <Page page-color="128 128 128" page-drawer="Main" page-infullview="yes" page-name="Main" page-width="1920">
+            <PageBlocks>
+                <Block genus-name="variable_number" id="1296">
+                    <Label>d</Label>
+                    <Location>
+                        <X>643</X>
+                        <Y>393</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="425" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="DuinoEDU_Ultrasonic" id="426">
+                    <Location>
+                        <X>661</X>
+                        <Y>307</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1293" connector-kind="plug" connector-type="number" init-type="number" label="code" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="427" connector-kind="socket" connector-type="number" init-type="number" label="Broche#" position-type="single"/>
+                        <BlockConnector con-block-id="428" connector-kind="socket" connector-type="number" init-type="number" label="Nb échantillon" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="428">
+                    <Location>
+                        <X>959</X>
+                        <Y>331</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="426" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="DuinoEDU_D2" id="427">
+                    <Location>
+                        <X>959</X>
+                        <Y>307</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="426" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="variable_number" id="1298">
+                    <Label>d</Label>
+                    <Location>
+                        <X>695</X>
+                        <Y>471</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1297" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="glue_sn" id="1297">
+                    <Location>
+                        <X>623</X>
+                        <Y>471</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="839" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1298" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="setter_variable_number" id="1293">
+                    <Location>
+                        <X>269</X>
+                        <Y>280</Y>
+                    </Location>
+                    <BeforeBlockId>1284</BeforeBlockId>
+                    <AfterBlockId>416</AfterBlockId>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1294" connector-kind="socket" connector-type="number" init-type="number" label="Nom de la variable" position-type="single"/>
+                        <BlockConnector con-block-id="426" connector-kind="socket" connector-type="number" init-type="number" label="Valeur" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="variable_number" id="1294">
+                    <Label>d</Label>
+                    <Location>
+                        <X>661</X>
+                        <Y>283</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1293" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="message" id="839">
+                    <Label>d(cm):</Label>
+                    <Location>
+                        <X>551</X>
+                        <Y>471</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1289" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1297" connector-kind="socket" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="DuinoEDU_LCD_I2C_RGB2" id="1289">
+                    <Location>
+                        <X>269</X>
+                        <Y>468</Y>
+                    </Location>
+                    <BeforeBlockId>416</BeforeBlockId>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="839" connector-kind="socket" connector-type="string" init-type="string" label="imprimer" position-type="single"/>
+                        <BlockConnector con-block-id="1291" connector-kind="socket" connector-type="number" init-type="number" label="n° de ligne" position-type="single"/>
+                        <BlockConnector con-block-id="1292" connector-kind="socket" connector-type="number" init-type="number" label="n° de colonne" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="1292">
+                    <Label>0</Label>
+                    <Location>
+                        <X>551</X>
+                        <Y>519</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1289" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1291">
+                    <Label>0</Label>
+                    <Location>
+                        <X>551</X>
+                        <Y>495</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1289" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="DuinoEDU_LCD_I2C_Backlight" id="1285">
+                    <Location>
+                        <X>270</X>
+                        <Y>190</Y>
+                    </Location>
+                    <BeforeBlockId>1284</BeforeBlockId>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="1286" connector-kind="socket" connector-type="number" init-type="number" label="Quantité de Rouge" position-type="single"/>
+                        <BlockConnector con-block-id="1287" connector-kind="socket" connector-type="number" init-type="number" label="Quantité de Vert" position-type="single"/>
+                        <BlockConnector con-block-id="1288" connector-kind="socket" connector-type="number" init-type="number" label="Quantité de Bleu" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="number" id="1288">
+                    <Label>10</Label>
+                    <Location>
+                        <X>580</X>
+                        <Y>241</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1285" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1287">
+                    <Label>10</Label>
+                    <Location>
+                        <X>580</X>
+                        <Y>217</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1285" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="number" id="1286">
+                    <Label>10</Label>
+                    <Location>
+                        <X>580</X>
+                        <Y>193</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="1285" connector-kind="plug" connector-type="number" init-type="number" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="glue_sn" id="425">
+                    <Location>
+                        <X>571</X>
+                        <Y>393</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="416" connector-kind="plug" connector-type="string" init-type="string" label="" position-type="single"/>
+                    </Plug>
+                    <Sockets num-sockets="1">
+                        <BlockConnector con-block-id="1296" connector-kind="socket" connector-type="number" init-type="number" label="" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="program" id="1284">
+                    <Location>
+                        <X>93</X>
+                        <Y>182</Y>
+                    </Location>
+                    <Sockets num-sockets="2">
+                        <BlockConnector con-block-id="1285" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Initialisation" position-type="single"/>
+                        <BlockConnector con-block-id="1293" connector-kind="socket" connector-type="cmd" init-type="cmd" label="Boucle" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="serial_print2" id="416">
+                    <Location>
+                        <X>269</X>
+                        <Y>390</Y>
+                    </Location>
+                    <BeforeBlockId>1293</BeforeBlockId>
+                    <AfterBlockId>1289</AfterBlockId>
+                    <Sockets num-sockets="3">
+                        <BlockConnector con-block-id="425" connector-kind="socket" connector-type="string" init-type="string" label="message2" position-type="single"/>
+                        <BlockConnector con-block-id="418" connector-kind="socket" connector-type="boolean" init-type="boolean" label="Ajout d'un espace" position-type="single"/>
+                        <BlockConnector con-block-id="419" connector-kind="socket" connector-type="boolean" init-type="boolean" label="nouvelle ligne" position-type="single"/>
+                    </Sockets>
+                </Block>
+                <Block genus-name="true" id="419">
+                    <Location>
+                        <X>571</X>
+                        <Y>441</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="416" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+                <Block genus-name="false" id="418">
+                    <Location>
+                        <X>571</X>
+                        <Y>417</Y>
+                    </Location>
+                    <Plug>
+                        <BlockConnector con-block-id="416" connector-kind="plug" connector-type="boolean" init-type="boolean" label="" position-type="mirror"/>
+                    </Plug>
+                </Block>
+            </PageBlocks>
+        </Page>
+    </Pages>
+</cb:CODEBLOCKS>
