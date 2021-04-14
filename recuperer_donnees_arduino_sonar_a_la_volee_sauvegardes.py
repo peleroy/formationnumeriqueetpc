@@ -19,7 +19,7 @@ line,=plt.plot([],[],'r-')
 
 # Ouverture du port de communication
 #ser=serial.Serial('COM3',9600)
-ser=serial.Serial('/dev/ttyACM1',9600)
+ser=serial.Serial('/dev/ttyACM0',9600)
 
 # Pour provoquer une réinitialisation au cas où le port n'est pas fermé (vidage du buffer)
 ser.close()
@@ -51,7 +51,7 @@ def mesure():
             # Sauvegarde des données au préalable
             fichier=open(nomfichier+'.csv','w')
             
-            fichier.write('t(s)'+';'+'d (m)'+'\n') # Ecriture de la première ligne
+            fichier.write('t(ms)'+';'+'d (cm)'+'\n') # Ecriture de la première ligne
             for i in range(len(liste_d)):
                 fichier.write(str(liste_t[i]).replace('.',',')+';'+str(liste_d[i]).replace('.',',')+'\n')
             

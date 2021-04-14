@@ -34,7 +34,7 @@ ser.close()
 
 # Sauvegarde des données dans un fichier extérieur (optionnel)
 fichier=open(nomfichier+'.csv','w')
-fichier.write('t(s)'+';'+'d (m)'+'\n') # Ecriture de la première ligne
+fichier.write('t(ms)'+';'+'d (cm)'+'\n') # Ecriture de la première ligne
 
 for i in range(len(liste_d)):
     fichier.write(str(liste_t[i]).replace('.',',')+';'+str(liste_d[i]).replace('.',',')+'\n') # Ecriture dans le fichier (on remplace le séparateur décimal au passage)
