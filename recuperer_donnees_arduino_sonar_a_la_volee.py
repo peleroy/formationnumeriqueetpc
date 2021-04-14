@@ -21,8 +21,7 @@ line,=plt.plot([],[],'r-')
 ser=serial.Serial('/dev/ttyACM1',9600)
 
 # Pour provoquer une réinitialisation au cas où le port n'est pas fermé (vidage du buffer)
-ser.close()
-ser.open()
+ser.flushInput()
 
 # Initialisation des listes
 liste_d=[]

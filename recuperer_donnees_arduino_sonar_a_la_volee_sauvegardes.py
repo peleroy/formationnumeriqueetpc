@@ -22,8 +22,7 @@ line,=plt.plot([],[],'r-')
 ser=serial.Serial('/dev/ttyACM0',9600)
 
 # Pour provoquer une réinitialisation au cas où le port n'est pas fermé (vidage du buffer)
-ser.close()
-ser.open()
+ser.flushInput()
 
 # Initialisation des listes
 liste_d=[]
@@ -51,7 +50,7 @@ def mesure():
             # Sauvegarde des données au préalable
             fichier=open(nomfichier+'.csv','w')
             
-            fichier.write('t(ms)'+';'+'d (cm)'+'\n') # Ecriture de la première ligne
+            fichier.write('t (ms)'+';'+'d (cm)'+'\n') # Ecriture de la première ligne
             for i in range(len(liste_d)):
                 fichier.write(str(liste_t[i]).replace('.',',')+';'+str(liste_d[i]).replace('.',',')+'\n')
             

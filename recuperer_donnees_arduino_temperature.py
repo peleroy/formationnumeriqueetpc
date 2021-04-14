@@ -38,7 +38,7 @@ for i in range(len(liste_t)):
 
 # Sauvegarde des données dans un fichier extérieur (optionnel)
 fichier=open(nomfichier+'.csv','w')
-fichier.write('t(s)'+';'+'T (°C)'+'\n') # Ecriture de la première ligne
+fichier.write('t (s)'+';'+'T (°C)'+'\n') # Ecriture de la première ligne
 
 for i in range(len(liste_T)):
     fichier.write(str(liste_t[i]).replace('.',',')+';'+str(liste_T[i]).replace('.',',')+'\n') # Ecriture dans le fichier (on remplace le séparateur décimal au passage)
