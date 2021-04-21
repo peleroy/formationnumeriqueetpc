@@ -1,31 +1,34 @@
-#include <Wire.h>
 #include <rgb_lcd.h>
-#include <Duinoedu_MathPlus.h>
+#include <TSTemperature.h>
 
-rgb_lcd monRgb;
-double T = 0.0 ;
-unsigned long t = 0UL ;
+rgb_lcd rgbLcd;
+double _ABVAR_1_T = 0.0 ;
+unsigned long _ABVAR_2_t = 0UL ;
 
 void setup()
 {
-  monRgb.branch();
+  rgbLcd.begin(16,2);
   Serial.begin(9600);
-  monRgb.retroeclairage(10,10,10);
+  rgbLcd.setRGB(constrain(10,0,255),constrain(10,0,255),constrain(10,0,255));
 }
 
 void loop()
 {
-  T = convertirEnDegres(analogRead(A0)) ;
-  t = millis() ;
-  Serial.print(t);
-  Serial.print(" ");
-  Serial.print(T,1);
+  _ABVAR_1_T = getTemperature(analogRead(0), 10000.0f, 3975) ;
+  _ABVAR_2_t = millis() ;
+  Serial.print(_ABVAR_2_t);
+  Serial.print("/");
+  Serial.print(_ABVAR_1_T);
   Serial.println();
-  monRgb.placerCurseurEn(0,0);
-  monRgb.ecrire("T(oC):" );
-  monRgb.ecrire(String(T,1)  );
-  monRgb.placerCurseurEn(1,0);
-  monRgb.ecrire("t(ms):" );
-  monRgb.ecrire(String(t)  );
+  rgbLcd.setCursor(0, 0);
+  rgbLcd.print("T(oC)=" );
+  rgbLcd.print(_ABVAR_1_T );
+  rgbLcd.print("                ");
+  rgbLcd.setCursor(0, 1);
+  rgbLcd.print("t(ms)=" );
+  rgbLcd.print(_ABVAR_2_t );
+  rgbLcd.print("                ");
   delay( 2000 );
 }
+
+

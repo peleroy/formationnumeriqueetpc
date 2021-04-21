@@ -1,24 +1,26 @@
-#include <Wire.h>
 #include <rgb_lcd.h>
-#include <Ultrasonic2.h>
+#include <Ultrasonic.h>
 
-rgb_lcd monRgb;
-int d = 0 ;
-Ultrasonic2 monUltrasonic_pin2(2);
+rgb_lcd rgbLcd;
+int _ABVAR_1_d = 0 ;
+Ultrasonic us_pin2(2);
 
 void setup()
 {
-  monRgb.branch();
+  rgbLcd.begin(16,2);
   Serial.begin(9600);
-  monRgb.retroeclairage(10,10,10);
+  rgbLcd.setRGB(constrain(10,0,255),constrain(10,0,255),constrain(10,0,255));
 }
 
 void loop()
 {
-  d = monUltrasonic_pin2.mesurer(1) ;
-  Serial.print(d);
+  _ABVAR_1_d = us_pin2.MeasureInCentimeters() ;
+  Serial.print(_ABVAR_1_d);
   Serial.println();
-  monRgb.placerCurseurEn(0,0);
-  monRgb.ecrire("d(cm):" );
-  monRgb.ecrire(d );
+  rgbLcd.setCursor(0, 0);
+  rgbLcd.print("d(cm)=" );
+  rgbLcd.print(_ABVAR_1_d );
+  rgbLcd.print("                ");
 }
+
+

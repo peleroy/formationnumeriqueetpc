@@ -8,10 +8,12 @@ nomfichier='recuperer_donnees_arduino_sonar_python'
 
 # Ouverture du port de communication
 #ser=serial.Serial('COM3',9600)
-ser=serial.Serial('/dev/ttyACM1',9600)
+ser=serial.Serial('/dev/ttyACM0',9600)
 
 # Pour provoquer une réinitialisation au cas où le port n'est pas fermé (vidage du buffer)
-ser.flushInput()
+#ser.flushInput()
+ser.close()
+ser.open()
 
 # Acquisition
 liste_d=[]
@@ -19,7 +21,7 @@ liste_t=[]
 t=0
 while t<duree:
     try:
-        s=ser.readline().decode('utf8').split(' ')
+        s=ser.readline().decode('utf8').split('/')
         d=int(s[0])
         t=int(s[1])
         liste_d.append(d)

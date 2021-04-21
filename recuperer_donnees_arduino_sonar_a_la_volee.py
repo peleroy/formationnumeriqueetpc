@@ -18,7 +18,7 @@ line,=plt.plot([],[],'r-')
 
 # Ouverture du port de communication
 #ser=serial.Serial('COM3',9600)
-ser=serial.Serial('/dev/ttyACM1',9600)
+ser=serial.Serial('/dev/ttyACM0',9600)
 
 # Pour provoquer une réinitialisation au cas où le port n'est pas fermé (vidage du buffer)
 ser.flushInput()
@@ -39,7 +39,7 @@ def mesure():
         pass
     
     try:
-        s=ser.readline().decode('utf8').split(' ')
+        s=ser.readline().decode('utf8').split('/')
         d=int(s[0])
         t=int(s[1])
         liste_d.append(d)

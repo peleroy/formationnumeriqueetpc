@@ -1,31 +1,34 @@
-#include <Wire.h>
 #include <rgb_lcd.h>
-#include <Ultrasonic2.h>
+#include <Ultrasonic.h>
 
-rgb_lcd monRgb;
-int d = 0 ;
-Ultrasonic2 monUltrasonic_pin2(2);
-unsigned long t = 0UL ;
+rgb_lcd rgbLcd;
+int _ABVAR_1_d = 0 ;
+Ultrasonic us_pin2(2);
+unsigned long _ABVAR_2_t = 0UL ;
 
 void setup()
 {
-  monRgb.branch();
+  rgbLcd.begin(16,2);
   Serial.begin(9600);
-  monRgb.retroeclairage(10,10,10);
+  rgbLcd.setRGB(constrain(10,0,255),constrain(10,0,255),constrain(10,0,255));
 }
 
 void loop()
 {
-  d = monUltrasonic_pin2.mesurer(1) ;
-  t = millis() ;
-  Serial.print(d);
-  Serial.print(" ");
-  Serial.print(t);
+  _ABVAR_1_d = us_pin2.MeasureInCentimeters() ;
+  _ABVAR_2_t = millis() ;
+  Serial.print(_ABVAR_1_d);
+  Serial.print("/");
+  Serial.print(_ABVAR_2_t);
   Serial.println();
-  monRgb.placerCurseurEn(0,0);
-  monRgb.ecrire("d(cm):" );
-  monRgb.ecrire(d );
-  monRgb.placerCurseurEn(1,0);
-  monRgb.ecrire("t(ms):" );
-  monRgb.ecrire(String(t)  );
+  rgbLcd.setCursor(0, 0);
+  rgbLcd.print("d(cm)=" );
+  rgbLcd.print(_ABVAR_1_d );
+  rgbLcd.print("                ");
+  rgbLcd.setCursor(0, 1);
+  rgbLcd.print("t(ms)=" );
+  rgbLcd.print(_ABVAR_2_t );
+  rgbLcd.print("                ");
 }
+
+

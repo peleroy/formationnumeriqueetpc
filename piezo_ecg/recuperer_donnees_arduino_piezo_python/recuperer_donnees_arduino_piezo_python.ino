@@ -1,5 +1,5 @@
-int A = 0 ;
-unsigned long t = 0UL ;
+int _ABVAR_1_A = 0 ;
+unsigned long _ABVAR_2_t = 0UL ;
 
 void setup()
 {
@@ -8,10 +8,12 @@ void setup()
 
 void loop()
 {
-  A = analogRead(A0) ;
-  t = millis() ;
-  Serial.print(A);
-  Serial.print(" ");
-  Serial.print(t);
+  _ABVAR_1_A = analogRead(0) ;
+  _ABVAR_2_t = millis() ;
+  Serial.print(_ABVAR_1_A);
+  Serial.print("/");
+  Serial.print(_ABVAR_2_t);
   Serial.println();
 }
+
+

@@ -39,7 +39,7 @@ def mesure():
         pass
     
     try:
-        s=ser.readline().decode('utf8').split(' ')
+        s=ser.readline().decode('utf8').split('/')
         A=int(s[0])
         t=int(s[1])
         liste_A.append(A)

@@ -12,7 +12,7 @@ nomfichier='recuperer_donnees_arduino_temperature'
 
 # Ouverture du port série
 #ser=serial.Serial('COM3',9600)
-ser=serial.Serial('/dev/ttyACM1',9600)
+ser=serial.Serial('/dev/ttyACM0',9600)
 
 # Acquisition
 liste_t=[] # Création de la liste, vide
@@ -20,7 +20,7 @@ liste_T=[] # Création de la liste, vide
 
 while len(liste_T)<nb_points:
     try:
-        s=ser.readline().decode('utf8').split(' ') # Lecture de la ligne, décodage puis séparation des deux valeurs
+        s=ser.readline().decode('utf8').split('/') # Lecture de la ligne, décodage puis séparation des deux valeurs
         liste_t.append(int(s[0])) # Remplissage de la liste des temps
         liste_T.append(float(s[1])) # Remplissage de la liste des températures
         print(int(s[0]),'ms',float(s[1]),'°C') # Affichage des valeurs dans la console (pour vérification)

@@ -5,7 +5,7 @@ import serial
 
 # Caractéristiques de l'acquisition
 duree=5000 # (en ms)
-Amax=50 # Amplitude maximale à afficher
+Amax=100 # Amplitude maximale à afficher
 
 # Représentation graphique
 fig=plt.figure(1)
@@ -39,7 +39,7 @@ def mesure():
         pass
     
     try:
-        s=ser.readline().decode('utf8').split(' ')
+        s=ser.readline().decode('utf8').split('/')
         A=int(s[0])
         t=int(s[1])
         liste_A.append(A)
