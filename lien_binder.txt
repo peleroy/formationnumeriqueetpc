@@ -1,2 +1,0 @@
-https://mybinder.org/v2/gh/peleroy/formationnumeriqueetpc/HEAD?filepath=recuperer_donnees_arduino.ipynb
-
